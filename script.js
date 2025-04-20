@@ -10,11 +10,21 @@ let categoriesfiltercontainer = document.getElementById("categories-filter")
 let bannercontainer = document.getElementById("top-banner");
 let closebannerbtn = document.getElementById("close-top-banner-btn");
 
+let searchbar = document.getElementById("searchbar");
+let submitsearch = document.getElementById("searchbtn");
+
 closebannerbtn.addEventListener("click", () => {
     bannercontainer.innerHTML = "";
 })
 
+let searchtext = "";
 
-createMainArticles(mainarticlescontainer);
+
+submitsearch.addEventListener("click", () => {
+    searchtext = searchbar.value;
+    createMainArticles(mainarticlescontainer, searchtext)
+});
+
+
+createMainArticles(mainarticlescontainer, searchtext);
 categoriesFilter(categoriesfiltercontainer);
-
