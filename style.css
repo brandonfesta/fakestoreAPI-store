@@ -133,7 +133,25 @@ main{
     background-color: #fff;
     padding: 0 25px;
 }
-.products-container .articles-container{
+.products-container #articles-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+.products-container #articles-container article{
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.487);
+}
+.products-container #articles-container article button{
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid rgba(175, 175, 175, 0.487);
+    padding: 15px;
+    border-radius: 10px;
+}
+.products-container #articles-container article button:hover{
+    cursor: pointer;
+    background-color: #c5c5c574;
 }
