@@ -86,12 +86,28 @@ main{
     grid-template-columns: 1fr 9fr;
 }
 
-.categories-container button{
+.categories-container{
+    border: 1px solid #cbcbcb;
+}
+#categories-dropdown-btn{
     font-size: large;
     font-weight: bold;
     background-color: #fff;
-    border: 1px solid rgba(128, 128, 128, 0.487);
-    padding: 10px 200px 10px 10px;
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.487);
+    width: 100%;
+    padding: 10px 30px;
+}
+.categories-container #categories-filter button{
+    background-color: #f7f7f7;
+    width: 100%;
+    padding: 10px 30px;
+    border: none;
+    border-bottom: 1px solid #dadada;
+}
+.categories-container #categories-filter button:hover{
+    cursor: pointer;
+    background-color: #c5c5c574;
 }
 
 .top-seller-container{

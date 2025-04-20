@@ -1,5 +1,5 @@
 import { APIURL } from "../const/ApiUrl.js";
-import { getArticlesArray } from "./getArticlesArray.js"
+import { getArticlesArray } from "./getArrays.js"
 
 export async function createMainArticles(mainarticlescontainer){
     mainarticlescontainer.innerHTML = "";
