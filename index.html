@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fakestoreAPI | buy whatever you like</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" type="module"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <section id="top-banner">
@@ -50,19 +50,32 @@
         <aside>
             <div class="categories-container">
                 <Button id="categories-dropdown-btn">Categories</Button>
-                <ul>
+                <div id="categories-filter">
 
-                </ul>
+                </div>
             </div>
             <div class="top-seller-container">
-                <h3>Current Top Seller</h3>
-                <div>
-                    
+                <div class="top-seller-content">
+                    <h3>Current Top Seller</h3>
+                    <hr>
                 </div>
+                <button id="add-to-cart-bestseller">ADD TO CART</button>
             </div>
         </aside>
         <section class="main-section">
-            
+            <div class="store-info">
+                <h4>Free Shipping Worldwide</h4>
+                <h4>Secure Shopping</h4>
+                <h4>Rewards Program</h4>
+                <h4>30-days Free Returns</h4>
+            </div>
+            <div class="products-container">
+                <h3>Products</h3>
+                <hr>
+                <div class="articles-container">
+                    
+                </div>
+            </div>
         </section>
     </main>
 </body>
