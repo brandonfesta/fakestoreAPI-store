@@ -1,11 +1,10 @@
 import { getArticlesArray } from "./modules/getArrays.js";
 import { createMainArticles } from "./modules/createMainArticles.js";
 import { categoriesFilter } from "./modules/categoriesFilter.js";
-import { topSellerCard } from "./modules/topSellerCard.js";
 
 import { APIURL } from "./const/ApiUrl.js";
 
-let mainarticlescontainer = document.getElementById("articles-container")
+export let mainarticlescontainer = document.getElementById("articles-container")
 let categoriesfiltercontainer = document.getElementById("categories-filter")
 let topsellercontainer = document.getElementById("top-seller-content");
 
@@ -19,15 +18,23 @@ closebannerbtn.addEventListener("click", () => {
     bannercontainer.innerHTML = "";
 })
 
-let searchtext = "";
+export let searchtext = "";
+export let search = false;
+let categorychosen = "";
+let categorychosed = false
 
 
 submitsearch.addEventListener("click", () => {
     searchtext = searchbar.value;
-    createMainArticles(mainarticlescontainer, searchtext)
+    if(searchtext === ""){
+        search = false;
+        createMainArticles(mainarticlescontainer, searchtext, search);
+    } else {
+        search = true;
+        createMainArticles(mainarticlescontainer, searchtext, search);
+    }
 });
 
 
-createMainArticles(mainarticlescontainer, searchtext);
-categoriesFilter(categoriesfiltercontainer);
-topSellerCard(topsellercontainer)
+createMainArticles(mainarticlescontainer, searchtext, search, categorychosen, categorychosed);
+categoriesFilter(categoriesfiltercontainer, mainarticlescontainer, search, searchtext, categorychosen, categorychosed);

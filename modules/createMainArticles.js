@@ -2,11 +2,9 @@ import { APIURL } from "../const/ApiUrl.js";
 import { getArticlesArray } from "./getArrays.js"
 
 
-
-export async function createMainArticles(mainarticlescontainer, searchtext){
+export async function createMainArticles(mainarticlescontainer, searchtext, search, categorychosen, categorychosed){
     mainarticlescontainer.innerHTML = "";
-    let products = await getArticlesArray(searchtext);
-    console.log(searchtext)
+    let products = await getArticlesArray(searchtext, search, categorychosen, categorychosed);
     products.products.map(product => createArticle(product, mainarticlescontainer));
 }
 

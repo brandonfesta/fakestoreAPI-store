@@ -1,8 +1,18 @@
 import { APIURL } from "../const/ApiUrl.js"
 
-export async function getArticlesArray(searchtext){
+export async function getArticlesArray(searchtext, search, categorychosen, categorychosed){
     try{
-        let response = await fetch(APIURL+"/search?q="+searchtext);
+        let response;
+        if(!categorychosed){
+            if(search){
+                response = await fetch(APIURL+"/search?q="+searchtext);
+            }else{
+                response = await fetch(APIURL+"?limit=16");
+            }
+        } else{
+            response = await fetch(APIURL+"/category/"+categorychosen);
+        }
+        
         if(response.status === 404){
             throw new Error("cannot get products");
         }
