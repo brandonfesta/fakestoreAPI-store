@@ -1,5 +1,6 @@
 import { APIURL } from "../const/ApiUrl.js";
 import { getArticlesArray } from "./getArrays.js"
+import { cartList, cartArticles } from "../script.js";
 
 
 export async function createMainArticles(mainarticlescontainer, searchtext, search, categorychosen, categorychosed){
@@ -21,6 +22,30 @@ function createArticle(product, mainarticlescontainer){
     title.textContent = product.title;
     price.textContent = product.price + "$";
     button.textContent = "ADD TO CART";
+
+    button.addEventListener("click", () => {
+        cartArticles.innerHTML = "";
+        
+        cartList.push(product);
+
+        cartList.map((article) => {
+
+            let container = document.createElement("article");
+
+            let image = document.createElement("img");
+            let title = document.createElement("h3");
+            let price = document.createElement("h4");
+
+            image.src = article.thumbnail;
+            title.textContent = article.title;
+            price.textContent = article.price + "$";
+
+            container.append(image, title, price);
+            cartArticles.append(container);
+
+        })
+
+    })
 
     let div = document.createElement("div");
 

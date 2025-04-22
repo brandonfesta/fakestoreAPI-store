@@ -13,7 +13,7 @@ function createCategoriesFilter(category, container, mainarticlescontainer, sear
     categorybtn.textContent = category.name;
 
     categorybtn.addEventListener("click", () => {
-        categorychosen = categorybtn.textContent;
+        categorychosen = category.slug;
         categorychosed = true
         createMainArticles(mainarticlescontainer, searchtext, search, categorychosen, categorychosed)
     })
